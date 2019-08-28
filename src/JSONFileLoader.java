@@ -62,7 +62,7 @@ public class JSONFileLoader {
     		JSONArray securities = (JSONArray) company.get("securities");
     		ArrayList<Security> allSecurities =  new ArrayList<Security>();
     		for (int j = 0; j < securities.size(); j++) {
-    			JSONObject security = (JSONObject) securities.get(i);
+    			JSONObject security = (JSONObject) securities.get(j);
     			JSONObject state = (JSONObject) security.get("state");
     			JSONObject currency = (JSONObject) security.get("currency");
     			

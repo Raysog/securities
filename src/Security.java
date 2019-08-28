@@ -1,3 +1,7 @@
+import sun.util.resources.LocaleData;
+
+import java.time.LocalDate;
+import java.util.Locale;
 
 /**
  * Created by Ivan on 27.08.2019.
@@ -8,7 +12,7 @@ public class Security {
     private String cfi = null;
     private Currency currency = null;
     private Long id = null;
-    private String dateTo = null;
+    private LocalDate dateTo = null;
     private String stateRegDate = null;
     private State state = null;
 
@@ -18,11 +22,23 @@ public class Security {
         this.cfi = cfi;
         this.currency = currency;
         this.id = id;
-        this.dateTo = dateTo;
+        this.dateTo = LocalDate.parse(dateTo);
         this.stateRegDate = stateRegDate;
         this.state = state;
     }
-    
+
+    public String getNameFull() {
+        return nameFull;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public LocalDate getDateTo() {
+        return dateTo;
+    }
+
     @Override
     public String toString() {
     	return "SECURITY: " + "\n" +

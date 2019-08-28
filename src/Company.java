@@ -41,13 +41,21 @@ public class Company {
         this.nameShort = nameShort;
         this.securities = securities;
     }
-    
+
+    public String getNameFull() {
+        return nameFull;
+    }
+
     public String getNameShort() {
     	return this.nameShort;
     }
     
     public String getEgrulDate() {
     	return this.egrulDate;
+    }
+
+    public ArrayList<Security> getSecurities(){
+        return this.securities;
     }
     
     @Override 

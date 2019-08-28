@@ -1,26 +1,31 @@
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 /**
  * Created by Ivan on 27.08.2019.
  */
 public class Tester {
     public static void main(String[] args) throws IOException, ParseException {
-    	//C:\Users\Ôåäîðîâ Èâàí\Downloads\test.json
+    	//
         JSONFileLoader jfl = new JSONFileLoader();
         System.out.println();
-        
-        ShortPrintable shortPrint = (c) -> {
-				System.out.println("\"" + c.getNameShort() + "\" Äàòà îñíîâàíèÿ " + c.getEgrulDate());
-			
-        };
-        
 
-        for (Company c : jfl.getCompanies()) {
-			shortPrint.shortPrint(c);
-		}
-        
+        ShortPrintable shortPrint = (c) -> System.out.println("ÐšÑ€Ð°Ñ‚ÐºÐ¾Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ: " + c.getNameShort() + "\nÐ”Ð°Ñ‚Ð° Ð¾ÑÐ½Ð¾Ð²Ð°Ð½Ð¸Ñ:  " + c.getEgrulDate());
+        jfl.getCompanies().forEach(shortPrint::shortPrint);
+
+        jfl.getCompanies().stream().forEach(company -> company.getSecurities().forEach(security -> {
+            if (security.getDateTo().isBefore(LocalDate.now())){
+                System.out.println( "code: " + security.getCode() + "\n" +
+                                    "dateTo: " + security.getDateTo() + "\n" +
+                                    "companyFullName: " + company.getNameFull() + "\n");
+            } else {}
+        }));
+
+
+
+
         
     }
 }
