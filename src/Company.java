@@ -1,3 +1,4 @@
+import java.io.BufferedReader;
 import java.util.ArrayList;
 
 /**
@@ -5,38 +6,70 @@ import java.util.ArrayList;
  */
 public class Company {
     private String ogrn = null;
-    private Company_type company_type = null;
+    private CompanyType companyType = null;
     private Country country = null;
     private String code = null;
     private String address = null;
-    private String name_full = null;
+    private String nameFull = null;
     private String inn = null;
-    private String fio_head = null;
-    private String egrul_date = null;
+    private String fioHead = null;
+    private String egrulDate = null;
     private String phone = null;
-    private String e_mail = null;
+    private String eMail = null;
     private String www = null;
-    private boolean is_resident;
-    private int id;
-    private String name_short = null;
+    private Boolean isResident = null;
+    private Long id = null;
+    private String nameShort = null;
     private ArrayList<Security> securities = null;
+    
 
-    public Company(String ogrn, Company_type company_type, Country country, String code, String address, String name_full, String inn, String fio_head, String egrul_date, String phone, String e_mail, String www, boolean is_resident, int id, String name_short, ArrayList<Security> securities) {
+    public Company(String ogrn, CompanyType companyType, Country country, String code, String address, String nameFull, String inn, String fioHead, String egrulDate, String phone, String eMail, String www, boolean isResident, Long id, String nameShort, ArrayList<Security> securities) {
         this.ogrn = ogrn;
-        this.company_type = company_type;
+        this.companyType = companyType;
         this.country = country;
         this.code = code;
         this.address = address;
-        this.name_full = name_full;
+        this.nameFull = nameFull;
         this.inn = inn;
-        this.fio_head = fio_head;
-        this.egrul_date = egrul_date;
+        this.fioHead = fioHead;
+        this.egrulDate = egrulDate;
         this.phone = phone;
-        this.e_mail = e_mail;
+        this.eMail = eMail;
         this.www = www;
-        this.is_resident = is_resident;
+        this.isResident = isResident;
         this.id = id;
-        this.name_short = name_short;
+        this.nameShort = nameShort;
         this.securities = securities;
     }
+    
+    @Override 
+    public String toString() {
+    	
+    	return "COMPANY: " + "\n" + 
+    			"ogrn = " + ogrn + "\n" + 
+    			"companyType = " + companyType.toString() + 
+    			"country = " + country.toString() + 
+    			"code = " + code + "\n" + 
+    			"address = " + address + "\n" + 
+    			"nameFull = " + nameFull + "\n" + 
+    			"inn = " + inn + "\n" + 
+    			"fioHead = " + fioHead + "\n" + 
+    			"egrulDate = " + egrulDate + "\n" + 
+    			"phone = " + phone + "\n" + 
+    			"eMail = " + eMail + "\n" + 
+    			"www = " + www + "\n" + 
+    			"isResident = " + isResident.toString() + "\n" + 
+    			"id = " + id.toString() + "\n" + 
+    			"nameShort = " + nameShort + "\n" + 
+    			"securities: \n" + printSecurities() + "\n";
+    }
+    
+    private String printSecurities() {
+    	StringBuilder sb = new StringBuilder();
+    	for (Security security : securities) {
+			sb.append(security.toString());
+		}
+    	return sb.toString();
+    }
+    
 }

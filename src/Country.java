@@ -4,11 +4,19 @@
 public class Country {
     private String code = null;
     private String name = null;
-    private int id;
+    private Long id = null;
 
-    public Country(String code, String name, int id) {
+    public Country(String code, String name, Long id) {
         this.code = code;
         this.name = name;
         this.id = id;
+    }
+    
+    @Override
+    public String toString() {
+    	return "COUNTRY: " + "\n" + 
+    			"\t" + "code = " + code + "\n" +
+    			"\t" + "name = " + name + "\n" +
+    			"\t" + "id = " + id.toString() + "\n";
     }
 }

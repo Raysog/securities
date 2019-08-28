@@ -3,14 +3,23 @@
  */
 public class Currency {
     private String code = null;
-    private String name_full = null;
-    private int id;
-    private String name_short = null;
+    private String nameFull = null;
+    private Long id = null;
+    private String nameShort = null;
 
-    public Currency(String code, String name_full, int id, String name_short) {
+    public Currency(String code, String nameFull, Long id, String nameShort) {
         this.code = code;
-        this.name_full = name_full;
+        this.nameFull = nameFull;
         this.id = id;
-        this.name_short = name_short;
+        this.nameShort = nameShort;
+    }
+    
+    @Override
+    public String toString() {
+    	return "CURRENCY: " + "\n" +
+    			"\t\t" + "code = " + code + "\n" +
+    			"\t\t" + "nameFull = " + nameFull + "\n" +
+    			"\t\t" + "id = " + id.toString() + "\n" +
+    			"\t\t" + "nameShort = " + nameShort + "\n";
     }
 }
