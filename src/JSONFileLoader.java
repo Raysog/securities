@@ -14,9 +14,15 @@ import java.util.Scanner;
  * Created by Ivan on 27.08.2019.
  */
 public class JSONFileLoader {
+	
 	private ArrayList<Company> companies = null;
+	
     public JSONFileLoader() throws IOException, ParseException {
     	this.companies = jsonArrayToList();
+    }
+    
+    public ArrayList<Company> getCompanies(){
+    	return this.companies;
     }
 
     private File addFile() {

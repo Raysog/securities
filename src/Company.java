@@ -42,6 +42,14 @@ public class Company {
         this.securities = securities;
     }
     
+    public String getNameShort() {
+    	return this.nameShort;
+    }
+    
+    public String getEgrulDate() {
+    	return this.egrulDate;
+    }
+    
     @Override 
     public String toString() {
     	
