@@ -27,6 +27,14 @@ public class Security {
         this.state = state;
     }
 
+    public Currency getCurrency() {
+        return currency;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
     public String getNameFull() {
         return nameFull;
     }

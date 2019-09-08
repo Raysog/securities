@@ -37,7 +37,7 @@ public class JSONFileLoader {
                 System.out.println("File downloaded");
                 correctPathFlag = true;
                 file = testFile;
-                scan.close();
+                //scan.close();
             } else {
                 System.out.println("The specified file does not exist");
             }

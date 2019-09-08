@@ -13,7 +13,11 @@ public class Currency {
         this.id = id;
         this.nameShort = nameShort;
     }
-    
+
+    public String getCode() {
+        return code;
+    }
+
     @Override
     public String toString() {
     	return "CURRENCY: " + "\n" +

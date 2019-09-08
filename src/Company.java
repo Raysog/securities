@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -13,7 +14,7 @@ public class Company {
     private String nameFull = null;
     private String inn = null;
     private String fioHead = null;
-    private String egrulDate = null;
+    private LocalDate egrulDate = null;
     private String phone = null;
     private String eMail = null;
     private String www = null;
@@ -32,7 +33,7 @@ public class Company {
         this.nameFull = nameFull;
         this.inn = inn;
         this.fioHead = fioHead;
-        this.egrulDate = egrulDate;
+        this.egrulDate = LocalDate.parse(egrulDate);
         this.phone = phone;
         this.eMail = eMail;
         this.www = www;
@@ -50,9 +51,11 @@ public class Company {
     	return this.nameShort;
     }
     
-    public String getEgrulDate() {
+    public LocalDate getEgrulDate() {
     	return this.egrulDate;
     }
+
+
 
     public ArrayList<Security> getSecurities(){
         return this.securities;
